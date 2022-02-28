@@ -26,10 +26,10 @@ const starting = async () => {
 
   await userRepository.save(foundUser);
 
-  const updatedUser = await userRepository
-    .createQueryBuilder("user")
-    .where("user.name = :name", { name: foundUser.name })
-    .getMany();
+  const updatedUser = await userRepository.find({
+    age: foundUser.age,
+    name: foundUser.name,
+  });
 
   console.log("user found after updating", updatedUser);
 };
