@@ -1,5 +1,5 @@
 import { createConnection } from "typeorm";
-
+import "reflect-metadata";
 import { User } from "./entity/User";
 
 const starting = async () => {
